@@ -117,7 +117,6 @@ function CertData() {
             <DataGrid
                 rows={filterdData}
                 columns={columns}
-                pageSize={10}
                 components={{ Toolbar: QuickSearchToolbar }}
                 rowHeight={55}
                 rowsPerPageOptions={[5, 10, 20,50,75,100]}

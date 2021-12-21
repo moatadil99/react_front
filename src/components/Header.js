@@ -10,7 +10,7 @@ function Header() {
                 <Container>
                 <Navbar.Brand className={Classes.link} href="">Pages</Navbar.Brand>
                 <Nav className="me-auto navbar_wrapper">
-                    <Link className={Classes.link} to="/main">Certification</Link>
+                    <Link className={Classes.link} to="/">Certification</Link>
                     <Link className={Classes.link} to="/chart1">Chart One Page</Link>
                     <Link className={Classes.link} to="/chart2">Chart Tow Page</Link>
                 </Nav>
