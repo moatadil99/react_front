@@ -87,7 +87,6 @@ function CertData() {
         try {
             const Cert= await
             axios.get("http://127.0.0.1:8000/api/cer")
-      console.log(Cert.data)
         setTableData(Cert.data);  // set State
         setFilterdData(Cert.data);
         } catch (err) {

@@ -13,7 +13,6 @@ function Chart1() {
     try {
         const Cert= await
         axios.get("http://127.0.0.1:8000/api/getdetails")
-        console.log(Cert.data)
         setCountOfCert(Cert.data.allCert)
         setCountOfExpiryCert(Cert.data.expireCert)
         } catch (err) {
