@@ -111,6 +111,9 @@ function CertData() {
         getCerts();
     }
     return (
+      <>
+      <h1> Data Table for All Certificates</h1>
+
         <Box sx={{ height: 800, width: 1 }}>             
             <DataGrid
                 rows={filterdData}
@@ -130,7 +133,7 @@ function CertData() {
 
             />
         </Box>
-
+    </>
     )
 }
 

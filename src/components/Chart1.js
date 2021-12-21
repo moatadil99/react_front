@@ -44,6 +44,8 @@ function Chart1() {
         data: data,
       };
     return (
+      <>
+                <h1> Chart for Expiry Certificates</h1>
         <div  style={{width: "500px",height: "500px",margin:'auto'}}  >
             <Pie  
                 width='650' height='350'
@@ -52,6 +54,8 @@ function Chart1() {
                 
             />
         </div>
+      </>
+
     )
 }
 
