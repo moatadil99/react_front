@@ -59,7 +59,7 @@ function QuickSearchToolbar(props) {
             },
           }}
         />
-             <Button onClick={(props.reload)}> refresh </Button> 
+             <Button className="bg-dark" onClick={(props.reload)}> refresh </Button> 
 
       </Box>
     );
@@ -74,10 +74,11 @@ const columns =[
     {field: 'entry_timestamp',headerName: 'Logged At',width:150},
     {field: 'not_before',headerName: 'Not Before',width:150},
     {field: 'common_name',headerName: 'Common Name',width:180},
-    {field: 'name_value',headerName: 'Matching Identities',width:600},
-    {field: 'issuer_name',headerName: 'Issuer Name',width:1200},
+    {field: 'name_value',headerName: 'Matching Identities',width:300},
+    {field: 'issuer_name',headerName: 'Issuer Name',width:1000},
     
 ]
+
 function CertData() {
 
     const[tableData,setTableData] = useState([]);
@@ -88,7 +89,7 @@ function CertData() {
             const Cert= await
             axios.get("http://127.0.0.1:8000/api/cer")
         setTableData(Cert.data);  // set State
-        setFilterdData(Cert.data);
+        setFilterdData(Cert.data);        
         } catch (err) {
           console.error(err.message);
         }
@@ -109,11 +110,12 @@ function CertData() {
     const filterdDataHandler = () => {
         getCerts();
     }
+    
     return (
       <>
       <h1> Data Table for All Certificates</h1>
-
-        <Box sx={{ height: 800, width: 1 }}>             
+        <div></div>
+        <Box sx={{ height: 700, width: 1 }}>             
             <DataGrid
                 rows={filterdData}
                 columns={columns}
@@ -126,6 +128,7 @@ function CertData() {
                     onChange: (event) => requestSearch(event.target.value),
                     clearSearch: () => requestSearch(''),
                     reload:() => filterdDataHandler()
+                    
                 },
                 }}
 
